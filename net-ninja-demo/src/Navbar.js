@@ -1,6 +1,6 @@
 function Navbar() {
     return (
-        <header className="navbar">
+        <nav className="navbar">
             <h1 className="logo">
                 <a href="/" className="link">Net Ninja Demo</a>
             </h1>
@@ -13,7 +13,7 @@ function Navbar() {
                     borderRadius: "10px"
                 }}>New Blog</a>
             </div>
-        </header>
+        </nav>
     );
 }
 

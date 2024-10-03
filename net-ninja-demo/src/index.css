@@ -1,5 +1,10 @@
-:root{
-  --primary1:rgb(163, 71, 86)
+:root {
+  --primary1: rgb(163, 71, 86);
+  --primary1-hover: rgb(97, 22, 35);
+  --alt1: rgb(216, 189, 194);
+  --alpha-b-20: rgba(0, 0, 0, 0.2);
+  --deep: rgb(14, 1, 3);
+  --light: rgb(245, 237, 239);
 }
 
 /* 重置所有標籤的樣式 */
@@ -104,6 +109,20 @@ input::placeholder {
 }
 
 /* 共用區 */
+.pri-btn {
+  padding: 20px 30px;
+  background-color: var(--primary1);
+  border-radius: 10px;
+  font-size: 1.5rem;
+  transition: background-color .35s;
+  transition: color .35s;
+}
+
+.pri-btn:hover {
+  background-color: var(--primary1-hover);
+  color: var(--light);
+}
+
 /* navbar */
 
 .navbar {
@@ -143,8 +162,31 @@ input::placeholder {
 }
 
 .home-wrap .color-change-btn {
-  padding: 20px 30px;
-  background-color: var(--primary1);
+  margin-bottom: 20px;
+  transition: background-color .35s;
+}
+
+.home-wrap .card {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 30px 15px 30px;
   border-radius: 10px;
-  font-size: 1.5rem;
+  margin: 0 auto;
+  row-gap: 10px;
+  background-color: var(--alpha-b-20);
+}
+
+.home-wrap .card .title {
+  font-size: 2rem;
+}
+
+.home-wrap .card .title .strong {
+  color: var(--primary1);
+}
+
+.home-wrap .card .para {
+  font-size: 1.2rem;
 }
