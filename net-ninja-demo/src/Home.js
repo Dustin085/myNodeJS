@@ -23,6 +23,7 @@ function Home() {
     };
 
     const cardInfoChangeHandle = () => {
+
         let rachelInfo = {
             name: "Rachel",
             age: 25
@@ -31,6 +32,7 @@ function Home() {
             name: "Dustin",
             age: 30
         };
+        
         setCardData((prevState) => {
             if (prevState.name === "Dustin") {
                 return rachelInfo;
