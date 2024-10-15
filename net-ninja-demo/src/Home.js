@@ -1,6 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Card from "./Card";
 
 function Home() {
+
+    useEffect(() => {
+        console.log("effect ran");
+    }, []);
 
     const [cardData, setCardData] = useState({
         name: "Dustin",
@@ -32,7 +37,7 @@ function Home() {
             name: "Dustin",
             age: 30
         };
-        
+
         setCardData((prevState) => {
             if (prevState.name === "Dustin") {
                 return rachelInfo;
@@ -40,6 +45,18 @@ function Home() {
                 return dustinInfo;
             }
         });
+    };
+
+    const [cardList, setCardList] = useState([
+        { id: 1, title: "Card One", content: "This is Card One." },
+        { id: 2, title: "Card Two", content: "This is Card Two." },
+        { id: 3, title: "Card Three", content: "This is Card Three." },
+    ]);
+
+    const deleteCardHandler = (id) => {
+        setCardList((prevState) => {
+            return prevState.filter(card => card.id !== id);
+        })
     };
 
     return (
@@ -50,6 +67,13 @@ function Home() {
                 <h3 className="title">Hello my name is <span className="strong">{cardData.name}</span>.</h3>
                 <p className="para">I'm {cardData.age} years old.</p>
                 <button type="button" className="pri-btn card-info-change-btn" onClick={cardInfoChangeHandle}>Change Card Info</button>
+            </div>
+            <div className="card-list">
+                {
+                    cardList.map((card) => {
+                        return <Card data={card} deleteCardHandler={deleteCardHandler} key={card.id} />
+                    })
+                }
             </div>
         </div>
     );

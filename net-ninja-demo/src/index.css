@@ -114,12 +114,11 @@ input::placeholder {
   background-color: var(--primary1);
   border-radius: 10px;
   font-size: 1.5rem;
-  transition: background-color .35s;
-  transition: color .35s;
+  transition: background-color .35s, color .35s;
 }
 
 .pri-btn:hover {
-  background-color: var(--primary1-hover);
+  /* background-color: var(--primary1-hover); */
   color: var(--light);
 }
 
@@ -163,7 +162,7 @@ input::placeholder {
 
 .home-wrap .color-change-btn {
   margin-bottom: 20px;
-  transition: background-color .35s;
+  transition: background-color .35s, color .35s;
 }
 
 .home-wrap .card {
@@ -179,6 +178,10 @@ input::placeholder {
   background-color: var(--alpha-b-20);
 }
 
+.home-wrap>.card {
+  margin-bottom: 50px;
+}
+
 .home-wrap .card .title {
   font-size: 2rem;
 }
@@ -189,4 +192,14 @@ input::placeholder {
 
 .home-wrap .card .para {
   font-size: 1.2rem;
+}
+
+.home-wrap .card-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border: solid 1px var(--primary1);
+  width: min-content;
+  margin: 0 auto;
+  padding: 20px 30px;
 }
